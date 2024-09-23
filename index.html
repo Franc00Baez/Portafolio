@@ -6,7 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
 </head>
 <body>
 
@@ -17,14 +27,14 @@
                     <h2><span>F</span>ranco <span>B</span>aez</h2>
                 </div>
                 <ul class="menu">
-                    <li ><a class="active" href="#">Home</a></li>
-                    <li><a href="#">About me</a></li>
-                    <li><a href="#">Protafolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li ><a class="active" href="#Home">Home</a></li>
+                    <li><a href="#about">About me</a></li>
+                    <li><a href="#portfolio">Protafolio</a></li>
+                    <li><a href="#contact-section">Contact</a></li>
                 </ul>
             </nav>
         </header>
-        <main class="main">
+        <main class="main" id="Home">
             <div class="info-content">
                 <h1>I'm <span>Franco Baez</span></h1>
                 <p>University student at the National Technological University (UTN), specialist in web design and back end development. thanks for stopping by!</p>
@@ -38,7 +48,7 @@
 
     <div class="about">
         <img src="./Imagenes/developer.png">
-        <div class="about-info">
+        <div class="about-info" id="about">
             <h2>About me</h2>
             <div class="divider"></div>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, nesciunt? Quas laudantium debitis minus hic dolore repellat inventore illo libero incidunt eligendi nulla consequuntur, quaerat nemo aliquam magni quae. Inventore.</p>
@@ -47,7 +57,73 @@
 
         </div>
     </div>
-    
-  
+
+  <div class="portfolio">
+    <div class="portfolio-heading" id="portfolio" >
+        <h2>My Portfolio</h2>
+        <div class="divider"></div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="card__img"></div>
+            <div class="card__title">
+                <h2>Project Description</h2>
+                <p>Easy Box is a desktop software used to keep track of your finances. will provide you with basic statistics about your expenses and savings. (still in progress)</p>
+            </div>
+            <div class="projects-links">
+                <a href="https://github.com/Franc00Baez/EASYBOX">
+                    <i class="fa-brands fa-github" style="color: darkgoldenrod;"></i>
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card__img2"></div>
+            <div class="card__title">
+                <h2>Project Description</h2>
+                <p>school project, crud of articles using C# and SQL</p>
+            </div>
+            <div class="projects-links2">
+                <a href="https://github.com/UTNProgramacion3/tp-winform-equipo-16A">
+                    <i class="fa-brands fa-github" style="color: darkgoldenrod;"></i>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+  </div>
+
+  <div class="contact-section">
+    <div class="contact-heading">
+      <h2 id="contact-section">Keep in touch</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="container-contact">
+      <img src="Imagenes/contact.png" alt="">
+      <div class="contact-form">
+        <h4>Send me a message...</h4>
+        <form class="form-group">
+          <input type="text" placeholder="Name" class="input">
+          <input type="email" placeholder="Email" class="input">
+          <textarea name="message" placeholder="Place your message here..."></textarea>
+          <button type="submit" class="btn-submit">Send message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer"> 
+    <div class="footer-content">
+      <h2>Franco Baez</h2>
+      <h5>Backend Developer</h5>
+    </div>
+    <div class="sotial-networks">
+        <a href="https://github.com/Franc00Baez">
+            <i class="fa-brands fa-github " style="color: #fff;"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/franco-baez-147b2a323/">
+            <i class="fab fa-linkedin" style="color: #fff;"></i>
+        </a>
+    </div>
+  </footer>
 </body>
 </html>
